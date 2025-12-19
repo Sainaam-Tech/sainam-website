@@ -1,0 +1,132 @@
+#################### default parameters ############################
+
+# favicon
+favicon = "images/favicon.png"
+
+# logo
+logo = "images/sainam-technology-light-mode-logo.png"
+logo_darkmode = "images/sainam-technology-dark-mode-logo.png"
+logo_width = "160px"
+logo_height = "32px"
+logo_webp = true
+
+
+# logo text fallback
+logo_text = "Sainam Technology"
+
+# navbar
+navbar_fixed = true
+
+# theme-mode
+theme_switcher = true
+theme_default = "system" # [light/dark/system]
+
+# Main Sections
+mainSections = ["blog"]
+
+# contact form action (replace when live)
+contact_form_action = "https://formspree.io/f/xeejoadk"
+
+# analytics
+google_tag_manager = ""
+google_adsense = ""
+
+# custom header scripts
+custom_script = ""
+
+# copyright
+copyright = "© 2025 Sainam Technology. All rights reserved."
+
+
+######################## Preloader ########################
+[preloader]
+enable = false
+preloader = ""
+
+
+######################## Navigation button ########################
+[navigation_button]
+enable = true
+label = "Get a Quote"
+link = "/contact"
+
+
+######################## Search ########################
+[search]
+enable = true
+primary_color = "#121212"
+include_sections = ["blog"]
+show_image = true
+show_description = true
+show_tags = true
+show_categories = false
+
+
+######################## Announcement ########################
+[announcement]
+enable = false
+expire_days = 7
+content = ""
+
+
+######################## SEO / OpenGraph ########################
+[metadata]
+keywords = [
+  "website development company in Mumbai",
+  "website development company in Palghar",
+  "website development company in Vasai",
+  "website development company in Virar",
+  "website development company in Dahanu",
+  "mvp development company in Mumbai",
+  "startup mvp development India",
+  "custom web development agency",
+  "saas product development company",
+  "software development company Maharashtra"
+]
+description = "Sainam Technology is a Mumbai-based website and MVP development company helping startups and businesses in Palghar, Vasai, Virar, and Dahanu build scalable digital products."
+author = "Sainam Technology"
+twitter = ""
+image = "images/og-image.png"
+
+
+######################## Site verification ########################
+[site_verification]
+google = ""
+bing = ""
+baidu = ""
+facebook = ""
+mastodon = ""
+
+
+######################## Cookies ########################
+[cookies]
+enable = false
+expire_days = 60
+content = "This site uses cookies to improve your experience."
+button = "Accept"
+
+
+######################## Diagrams ########################
+[mermaid]
+js_url = "https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.esm.min.mjs"
+
+
+######################## Sidebar widgets ########################
+[widgets]
+sidebar = ["tags"]
+
+
+######################## Google Map ########################
+[google_map]
+enable = false
+map_api_key = ""
+map_latitude = ""
+map_longitude = ""
+map_marker = "images/marker.png"
+
+
+######################## Subscription ########################
+[subscription]
+enable = false
+mailchimp_form_action = ""
+mailchimp_form_name = ""

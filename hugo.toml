@@ -1,6 +1,6 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
-baseURL = "https://sainaam-tech.github.io/sainam-website/"
+baseURL = "https://sainam.tech/"
 
 # Title of your website (required).
 title = "Website & MVP Development Agency"

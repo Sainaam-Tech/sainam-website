@@ -22,7 +22,7 @@ theme_switcher = true
 theme_default = "system" # [light/dark/system]
 
 # Main Sections
-mainSections = ["blog"]
+mainSections = ["services"]
 
 # contact form action (replace when live)
 contact_form_action = "https://formspree.io/f/xeejoadk"

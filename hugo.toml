@@ -19,13 +19,13 @@ hasCJKLanguage = false
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
-
+disableKinds = ["taxonomy", "term", "RSS"]
 ########################### Services #############################
 [services]
 
 # Google Analytics (replace when ready)
 [services.googleAnalytics]
-ID = "G-XXXXXXXXXX"
+ID = "G-KE1X865GSS"
 
 # Disqus (disabled for agency site – not needed)
 [services.disqus]

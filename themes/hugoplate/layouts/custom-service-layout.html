@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+<!-- Hero -->
+<section class="py-12 lg:py-20 bg-gray-50 dark:bg-gray-900">
+  <div class="container max-w-4xl">
+
+    <h1 class="text-3xl lg:text-5xl font-bold mb-4">
+      {{ .Title }}
+    </h1>
+
+    {{ with .Params.description }}
+    <p class="text-lg text-gray-600 dark:text-gray-400">
+      {{ . }}
+    </p>
+    {{ end }}
+
+  </div>
+</section>
+
+<!-- Content -->
+<section class="py-12 lg:py-16">
+  <div class="container">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+      <!-- Main Content -->
+      <article class="lg:col-span-2 prose prose-lg dark:prose-invert max-w-none">
+        {{ .Content }}
+      </article>
+
+      <!-- Sticky CTA -->
+      <aside class="lg:sticky lg:top-24 h-fit rounded-xl border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-950">
+
+        <h3 class="text-xl font-semibold mb-3">
+          Talk to an Expert
+        </h3>
+
+        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+          Get a clear estimate, timeline, and technical guidance for your project.
+        </p>
+
+        <a href="/contact"
+           class="block text-center w-full bg-primary text-white py-3 rounded-md font-medium">
+          Get a Free Consultation
+        </a>
+
+        <div class="mt-6 text-sm text-gray-500 dark:text-gray-400">
+          Serving clients in India, the US & Europe
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Bottom CTA (mobile focused) -->
+<section class="py-12 bg-primary text-white lg:hidden">
+  <div class="container text-center">
+    <h3 class="text-2xl font-semibold mb-4">
+      Ready to start your project?
+    </h3>
+    <a href="/contact"
+       class="inline-block bg-white text-primary px-6 py-3 rounded-md font-medium">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+{{ end }}

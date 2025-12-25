@@ -2,6 +2,7 @@
 # Banner
 banner:
   title: "We Build High-Quality Websites & MVPs That Scale With Your Business"
+  meta_title: "Website & MVP Development Company in India, US & Europe | Sainam Technology"
   content: "From idea to launch, we help startups and growing businesses design, develop, and ship fast, reliable, and scalable digital products — without unnecessary complexity."
   image: "/images/banner.png"
   button:

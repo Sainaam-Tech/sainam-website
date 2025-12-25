@@ -6,8 +6,6 @@ draft: false
 layout: "single"
 ---
 
-## Insights & Resources
-
 Welcome to the **Sainam Technology knowledge hub**.
 
 This space is dedicated to sharing practical insights on website development, MVP development, startup engineering, and building scalable digital products. Our goal is to publish content that helps founders, business owners, and product teams make better technical and strategic decisions.

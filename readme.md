@@ -19,7 +19,7 @@ Our primary services include:
 - SaaS Product Development
 
 We serve clients across:
-**Mumbai, Palghar, Vasai, Virar, and Dahanu**
+**India, the US and Europe**
 
 ---
 

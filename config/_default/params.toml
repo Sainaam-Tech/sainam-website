@@ -136,3 +136,10 @@ map_marker = "images/marker.png"
 enable = false
 mailchimp_form_action = ""
 mailchimp_form_name = ""
+
+
+######################## Company Info ########################
+[company]
+name = "Sainam Technology"
+address = "B/06, Om Devkrupa apt, Veer Savarkar Marg, Opp.Asha Industry, Virar (East), Mumbai, Maharashtra, India"
+email = "contact@turfbnb.in"

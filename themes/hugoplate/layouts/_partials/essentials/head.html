@@ -27,6 +27,12 @@
 {{/* https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo */}}
 {{ partial "basic-seo.html" . }}
 
+<!-- canonical -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- identity schema -->
+{{ partial "schema-identity.html" . }}
+
 
 <!-- custom script -->
 {{/* https://github.com/gethugothemes/hugo-modules/tree/master/components/custom-script */}}

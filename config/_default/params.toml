@@ -89,7 +89,7 @@ keywords = [
   "saas product development company",
   "software development company Maharashtra"
 ]
-description = "Sainam Technology is a Mumbai-based website and MVP development company helping startups and businesses in Palghar, Vasai, Virar, and Dahanu build scalable digital products."
+description = "Website and MVP development services for startups and businesses across India, the US, and Europe."
 author = "Sainam Technology"
 twitter = ""
 image = "images/og-image.png"
@@ -142,4 +142,3 @@ mailchimp_form_name = ""
 [company]
 name = "Sainam Technology"
 address = "B/06, Om Devkrupa apt, Veer Savarkar Marg, Opp.Asha Industry, Virar (East), Mumbai, Maharashtra, India"
-email = "contact@turfbnb.in"

@@ -1,6 +1,7 @@
 ######################## default configuration ####################
 # The base URL of your site (required). This will be prepended to all relative URLs.
 baseURL = "https://sainam.tech/"
+canonifyURLs = true
 
 # Title of your website (required).
 title = "Website & MVP Development Company | Sainam Technology"

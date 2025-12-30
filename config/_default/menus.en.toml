@@ -13,17 +13,20 @@ weight = 2
 
 [[main]]
 name = "Services"
+url = "/services"
 weight = 3
 
 [[main]]
 parent = "Services"
 name = "Website Development"
 url = "/services/website-development"
+weight = 1
 
 [[main]]
 parent = "Services"
 name = "MVP Development"
 url = "/services/mvp-development"
+weight = 2
 
 [[main]]
 name = "Blog"

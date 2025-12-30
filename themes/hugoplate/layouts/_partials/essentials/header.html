@@ -42,19 +42,19 @@
               type="checkbox"
               id="submenu-{{ .Name | urlize }}"
               class="peer hidden lg:hidden" />
-            <label
-              for="submenu-{{ .Name | urlize }}"
-              class="nav-link {{ range .Children }}
-                {{ $childURL := .URL | absLangURL }}
-                {{ $active := eq $childURL $pageURL }}
-                {{ if $active }}active{{ end }}
-              {{ end }} inline-flex items-center">
-              {{ .Name }}
-              <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
-                <path
-                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-              </svg>
-            </label>
+            <a
+  href="{{ .URL | relLangURL }}"
+  class="nav-link {{ range .Children }}
+    {{ $childURL := .URL | absLangURL }}
+    {{ $active := eq $childURL $pageURL }}
+    {{ if $active }}active{{ end }}
+  {{ end }} inline-flex items-center">
+  {{ .Name }}
+  <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20">
+    <path
+      d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+  </svg>
+</a>
             <ul
               class="nav-dropdown-list hidden peer-checked:block lg:invisible lg:absolute lg:block lg:opacity-0 lg:group-hover:visible lg:group-hover:opacity-100">
               {{ range .Children }}

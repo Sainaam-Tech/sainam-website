@@ -3,7 +3,6 @@ title: "Insights & Resources"
 meta_title: "Tech Insights & Product Development Resources | Sainam Technology"
 description: "Insights, guides, and resources on website development, MVP development, startups, and software engineering by Sainam Technology in Mumbai."
 draft: false
-layout: "single"
 ---
 
 Welcome to the **Sainam Technology knowledge hub**.

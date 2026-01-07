@@ -40,23 +40,29 @@ weight = 5
 
 
 # footer menu
-[[footer]]
-name = "About"
-url = "/about"
-weight = 1
 
 [[footer]]
 name = "Blog"
 url = "/blog"
-weight = 2
+weight = 1
 
 [[footer]]
 name = "Contact"
 url = "/contact"
+weight = 2
+
+[[footer]]
+name = "Website Development"
+url = "/services/website-development"
 weight = 3
+
+[[footer]]
+name = "MVP Development"
+url = "/services/mvp-development"
+weight = 4
 
 [[footer]]
 name = "Privacy Policy"
 url = "/privacy-policy"
-weight = 4
+weight = 5
 

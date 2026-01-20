@@ -315,5 +315,7 @@ Production-Linked Incentive schemes, Startup India initiatives with ₹945 crore
 ### About Sainam Technology
 
 **Sainam Technology** helps organizations navigate complex market opportunities through strategic consulting, technology solutions, and market entry support. Our expertise spans digital transformation, business strategy, and emerging market penetration, enabling clients to capitalize on high-growth opportunities like India's evolving market landscape.
-
 🌐 Website: https://sainam.tech
+author- subhansu satyapragnya 
+linkedin-www.linkedin.com/in/subhansu0969
+

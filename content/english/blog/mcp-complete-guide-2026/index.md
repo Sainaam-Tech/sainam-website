@@ -18,7 +18,7 @@ tags:
   - Tool Use
   - Agentic AI
 author: "Sainam Technology"
-image: "/images/mcp-complete-guide-2026.jpg"
+image: "/images/mcp-complete-guide-2026.jpeg"
 toc: true
 ---
 

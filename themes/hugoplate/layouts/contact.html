@@ -1,47 +1,75 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
-
-
   <section class="section-sm">
     <div class="container">
       <div class="row">
         <div class="md:col-10 lg:col-6 mx-auto">
-          <form action="{{ site.Params.contact_form_action }}" method="POST">
-            <div class="mb-6">
-              <label for="name" class="form-label">
-                Full Name <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="name"
-                name="name"
-                class="form-input"
-                placeholder="John Doe"
-                type="text" />
+
+          <!-- Toggle Buttons -->
+          <div class="contact-toggle mb-8">
+            <button
+              id="btn-message"
+              class="btn btn-primary active-tab"
+              onclick="showTab('message')">
+              ✉️ Send a Message
+            </button>
+            <button
+              id="btn-booking"
+              class="btn btn-primary"
+              onclick="showTab('booking')">
+              📅 Book a Consultation
+            </button>
+          </div>
+
+          <!-- Contact Form (existing, untouched) -->
+          <div id="tab-message">
+            <form action="{{ site.Params.contact_form_action }}" method="POST">
+              <div class="mb-6">
+                <label for="name" class="form-label">
+                  Full Name <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  class="form-input"
+                  placeholder="John Doe"
+                  type="text" />
+              </div>
+              <div class="mb-6">
+                <label for="email" class="form-label">
+                  Working Mail <span class="text-red-500">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="john.doe@email.com"
+                  type="email" />
+              </div>
+              <div class="mb-6">
+                <label for="message" class="form-label">
+                  Anything else? <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  class="form-input"
+                  placeholder="Message goes here..."
+                  rows="8"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+          <!-- Calendly Inline Embed -->
+          <div id="tab-booking" style="display:none;">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/sainam-tech11/30min"
+              style="min-width:320px; height:700px;">
             </div>
-            <div class="mb-6">
-              <label for="email" class="form-label">
-                Working Mail <span class="text-red-500">*</span>
-              </label>
-              <input
-                id="email"
-                name="email"
-                class="form-input"
-                placeholder="john.doe@email.com"
-                type="email" />
-            </div>
-            <div class="mb-6">
-              <label for="message" class="form-label">
-                Anything else? <span class="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                class="form-input"
-                placeholder="Message goes here..."
-                rows="8"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          </div>
+
         </div>
       </div>
     </div>
@@ -116,5 +144,49 @@
     <script defer src="{{ $gmap.RelPermalink }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
   {{ end }}
+
+  <!-- Calendly widget assets -->
+  <link
+    href="https://assets.calendly.com/assets/external/widget.css"
+    rel="stylesheet" />
+  <script
+    src="https://assets.calendly.com/assets/external/widget.js"
+    type="text/javascript"
+    async>
+  </script>
+
+  <!-- Tab switching logic -->
+  <script>
+    function showTab(tab) {
+      const messageTab = document.getElementById('tab-message');
+      const bookingTab = document.getElementById('tab-booking');
+      const btnMessage = document.getElementById('btn-message');
+      const btnBooking = document.getElementById('btn-booking');
+
+      if (tab === 'message') {
+        messageTab.style.display = 'block';
+        bookingTab.style.display = 'none';
+        btnMessage.style.opacity = '1';
+        btnMessage.style.fontWeight = '600';
+        btnBooking.style.opacity = '0.6';
+        btnBooking.style.fontWeight = 'normal';
+      } else {
+        messageTab.style.display = 'none';
+        bookingTab.style.display = 'block';
+        btnBooking.style.opacity = '1';
+        btnBooking.style.fontWeight = '600';
+        btnMessage.style.opacity = '0.6';
+        btnMessage.style.fontWeight = 'normal';
+      }
+    }
+
+    // Set initial active state on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('btn-message').style.opacity = '1';
+      document.getElementById('btn-message').style.fontWeight = '600';
+      document.getElementById('btn-booking').style.opacity = '0.6';
+      document.getElementById('btn-booking').style.fontWeight = 'normal';
+    });
+  </script>
 
 {{ end }}

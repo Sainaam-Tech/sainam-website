@@ -8,21 +8,30 @@
           <!-- Toggle Buttons -->
           <div class="contact-toggle mb-8">
             <button
-              id="btn-message"
-              class="btn btn-primary active-tab"
-              onclick="showTab('message')">
-              ✉️ Send a Message
-            </button>
-            <button
               id="btn-booking"
-              class="btn btn-primary"
+              class="contact-tab-btn active"
               onclick="showTab('booking')">
               📅 Book a Consultation
             </button>
+            <button
+              id="btn-message"
+              class="contact-tab-btn"
+              onclick="showTab('message')">
+              ✉️ Send a Message
+            </button>
           </div>
 
-          <!-- Contact Form (existing, untouched) -->
-          <div id="tab-message">
+          <!-- Calendly Inline Embed (shown first / default) -->
+          <div id="tab-booking">
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/sainam-tech11/30min"
+              style="min-width:320px; height:700px;">
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div id="tab-message" style="display:none;">
             <form action="{{ site.Params.contact_form_action }}" method="POST">
               <div class="mb-6">
                 <label for="name" class="form-label">
@@ -61,15 +70,6 @@
             </form>
           </div>
 
-          <!-- Calendly Inline Embed -->
-          <div id="tab-booking" style="display:none;">
-            <div
-              class="calendly-inline-widget"
-              data-url="https://calendly.com/sainam-tech11/30min"
-              style="min-width:320px; height:700px;">
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -90,7 +90,6 @@
 
   {{ with site.Params.subscription }}
     {{ if .enable }}
-      <!-- subscription form -->
       <form
         action="{{ .mailchimp_form_action | safeURL }}"
         method="post"
@@ -113,29 +112,16 @@
             {{ .button_label }}
           </button>
         </div>
-        <input
-          type="hidden"
-          name="EMAILTYPE"
-          id="mce-EMAILTYPE-0"
-          value="html" />
+        <input type="hidden" name="EMAILTYPE" id="mce-EMAILTYPE-0" value="html" />
         <div style="position:absolute;left:-5000px" aria-hidden="true">
           <input type="text" name="{{ .name }}" tabindex="-1" />
         </div>
       </form>
       <div id="mce-responses" class="clear">
-        <div
-          class="response text-white"
-          id="mce-error-response"
-          style="display:none"></div>
-        <div
-          class="response text-white"
-          id="mce-success-response"
-          style="display:none"></div>
+        <div class="response text-white" id="mce-error-response" style="display:none"></div>
+        <div class="response text-white" id="mce-success-response" style="display:none"></div>
       </div>
-      <script
-        type="text/javascript"
-        src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-      <!-- /subscription form -->
+      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     {{ end }}
   {{ end }}
 
@@ -146,16 +132,44 @@
   {{ end }}
 
   <!-- Calendly widget assets -->
-  <link
-    href="https://assets.calendly.com/assets/external/widget.css"
-    rel="stylesheet" />
-  <script
-    src="https://assets.calendly.com/assets/external/widget.js"
-    type="text/javascript"
-    async>
-  </script>
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
-  <!-- Tab switching logic -->
+  <style>
+    .contact-toggle {
+      display: flex;
+      gap: 0;
+      background: #f1f1f1;
+      border-radius: 10px;
+      padding: 4px;
+      width: fit-content;
+    }
+
+    .contact-tab-btn {
+      padding: 10px 22px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 500;
+      background: transparent;
+      color: #555;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .contact-tab-btn.active {
+      background: #fff;
+      color: #111;
+      font-weight: 700;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    }
+
+    .contact-tab-btn:not(.active):hover {
+      color: #111;
+      background: rgba(255,255,255,0.5);
+    }
+  </style>
+
   <script>
     function showTab(tab) {
       const messageTab = document.getElementById('tab-message');
@@ -163,30 +177,18 @@
       const btnMessage = document.getElementById('btn-message');
       const btnBooking = document.getElementById('btn-booking');
 
-      if (tab === 'message') {
+      if (tab === 'booking') {
+        bookingTab.style.display = 'block';
+        messageTab.style.display = 'none';
+        btnBooking.classList.add('active');
+        btnMessage.classList.remove('active');
+      } else {
         messageTab.style.display = 'block';
         bookingTab.style.display = 'none';
-        btnMessage.style.opacity = '1';
-        btnMessage.style.fontWeight = '600';
-        btnBooking.style.opacity = '0.6';
-        btnBooking.style.fontWeight = 'normal';
-      } else {
-        messageTab.style.display = 'none';
-        bookingTab.style.display = 'block';
-        btnBooking.style.opacity = '1';
-        btnBooking.style.fontWeight = '600';
-        btnMessage.style.opacity = '0.6';
-        btnMessage.style.fontWeight = 'normal';
+        btnMessage.classList.add('active');
+        btnBooking.classList.remove('active');
       }
     }
-
-    // Set initial active state on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('btn-message').style.opacity = '1';
-      document.getElementById('btn-message').style.fontWeight = '600';
-      document.getElementById('btn-booking').style.opacity = '0.6';
-      document.getElementById('btn-booking').style.fontWeight = 'normal';
-    });
   </script>
 
 {{ end }}

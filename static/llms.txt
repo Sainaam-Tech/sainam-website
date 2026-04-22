@@ -1,5 +1,19 @@
-Site: https://sainam.tech
-Company: Sainam Technology
-Services: Website Development, MVP Development
-Regions: India, United States, Europe
-Contact: https://sainam.tech/contact
+# Sainam Technology - Website & MVP Development
+
+Sainam Technology is a specialized development agency based in Mumbai, India, serving clients globally in the US, Europe, and India. We focus on building high-quality, scalable websites and Minimum Viable Products (MVPs) for startups and growing businesses.
+
+## Core Services
+- **Website Development:** Custom, high-performance, and SEO-optimized websites using modern frameworks.
+- **MVP Development:** Rapid product development for startups to validate ideas and scale.
+- **Local Expertise:** Serving Mumbai, Palghar, Vasai, Virar, and Dahanu regions.
+
+## Key Information
+- **Website:** https://sainam.tech
+- **Location:** Mumbai, Maharashtra, India
+- **Contact:** https://sainam.tech/contact
+- **Socials:** 
+  - LinkedIn: https://www.linkedin.com/company/sainam-technology
+  - Twitter: https://x.com/SainamTech
+
+## Technical Focus
+We prioritize engineering excellence, clean architecture, and performance-first development, avoiding unnecessary complexity to deliver reliable digital products.

@@ -5,6 +5,7 @@ banner:
   meta_title: "Website & MVP Development Company in India, US & Europe | Sainam Technology"
   content: "From idea to launch, we help startups and growing businesses design, develop, and ship fast, reliable, and scalable digital products — without unnecessary complexity."
   image: "/images/banner.png"
+  image_alt: "Sainam Technology - Building High-Quality Websites and MVPs for Startups"
   button:
     enable: true
     label: "Book a Free Consultation"
@@ -14,6 +15,7 @@ banner:
 features:
   - title: "End-to-End Website Development"
     image: "/images/service-1.png"
+    image_alt: "Modern and high-performance website development services"
     content: "We design and develop modern, high-performance websites that are fast, secure, and optimized for growth."
     bulletpoints:
       - "Custom website development (business, landing pages, portals)"
@@ -29,6 +31,7 @@ features:
 
   - title: "MVP Development for Startups & Founders"
     image: "/images/service-2.png"
+    image_alt: "MVP development for startups to validate and scale product ideas"
     content: "We help founders turn ideas into working MVPs quickly, so you can validate your product, attract users, and raise funding faster."
     bulletpoints:
       - "Product discovery & MVP planning"
@@ -43,6 +46,7 @@ features:
 
   - title: "Why Choose Us as Your Development Partner"
     image: "/images/service-3.png"
+    image_alt: "Scalable and reliable development partnership with Sainam Technology"
     content: "We focus on clarity, speed, and long-term scalability — so you don’t waste time or money rebuilding later."
     bulletpoints:
       - "Startup-friendly approach with clear timelines"

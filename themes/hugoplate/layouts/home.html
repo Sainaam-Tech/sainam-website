@@ -1,33 +1,35 @@
 {{ define "main" }}
   <!-- Banner -->
   {{ with .Params.banner }}
-    <section class="section pt-14">
+    <section class="section pt-24 pb-12 overflow-hidden relative">
       <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
+        <div class="row justify-center items-center">
+          <div class="lg:col-8 md:col-10 mb-12 text-center relative z-10">
+            <h1 class="mb-6 text-h2 lg:text-7xl font-black bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent leading-tight">
               {{ .title | markdownify }}
             </h1>
-            <p class="mb-8">
+            <p class="mb-10 text-xl lg:text-2xl opacity-80 max-w-3xl mx-auto font-medium">
               {{ .content | markdownify }}
             </p>
             {{ with .button }}
               {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
+                <div class="flex flex-wrap justify-center gap-4">
+                  <a
+                    class="btn btn-primary btn-lg !text-base"
+                    href="{{ .link | absURL }}"
+                    {{ if strings.HasPrefix .link `http` }}
+                      target="_blank" rel="noopener"
+                    {{ end }}>
+                    {{ .label }}
+                    <i class="fa fa-arrow-right pl-2"></i>
+                  </a>
+                </div>
               {{ end }}
             {{ end }}
           </div>
-          <div class="col-12">
-            {{/* image modules comes from https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
+          <div class="col-12 text-center relative">
+            <div class="absolute inset-0 bg-primary/20 blur-[120px] rounded-full max-w-2xl mx-auto -z-10 h-64 top-1/2 -translate-y-1/2"></div>
+            {{ partial "image" (dict "Src" .image "Alt" (.image_alt | default "Banner image") "Loading" "eager" "Class" "mx-auto lg:!max-w-[900px] rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(0,0,0,0.3)]" "DisplayXL" "900x" ) }}
           </div>
         </div>
       </div>
@@ -37,14 +39,14 @@
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
-    <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+    <section class="section-sm">
       <div class="container">
-        <div class="row items-center justify-between">
+        <div class="glass-card row items-center justify-between">
           <div
             class="mb:md-0 {{ if not (modBool $i 2) }}
               md:order-2
             {{ end }} md:col-5 mb-6">
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+            {{ partial "image" (dict "Src" .image "Alt" (.image_alt | default "feature image") "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x" "Class" "rounded-2xl shadow-lg") }}
           </div>
           <div
             class="{{ if not (modBool $i 2) }}
@@ -53,13 +55,13 @@
             <h2 class="mb-4">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="mb-8 text-lg opacity-80">
               {{ .content | markdownify }}
             </p>
-            <ul>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
               {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                <li class="relative mb-4 pl-6 text-sm">
+                  <i class="fa fa-check absolute left-0 top-1 text-primary"></i>
                   {{ . | markdownify }}
                 </li>
               {{ end }}
@@ -99,8 +101,8 @@
                   {{ range .Params.testimonials }}
                     <div class="swiper-slide">
                       <div
-                        class="bg-light dark:bg-darkmode-light rounded-lg px-7 py-10">
-                        <div class="text-text-dark dark:text-white">
+                        class="glass-card rounded-[2rem] px-8 py-10 h-full">
+                        <div class="text-primary">
                           <svg
                             width="33"
                             height="20"
@@ -112,18 +114,18 @@
                               fill="currentColor" />
                           </svg>
                         </div>
-                        <blockquote class="mt-8">
-                          {{ .content | markdownify }}
+                        <blockquote class="mt-8 text-lg font-medium leading-relaxed">
+                          "{{ .content | markdownify }}"
                         </blockquote>
-                        <div class="mt-11 flex items-center">
+                        <div class="mt-auto pt-8 flex items-center">
                           <div class="text-text-dark dark:text-white">
-                            {{ partial "image" (dict "Src" .avatar "Size" "50x50" "Class" "rounded-full" "Alt" .name) }}
+                            {{ partial "image" (dict "Src" .avatar "Size" "60x60" "Class" "rounded-full ring-4 ring-white/20 shadow-xl" "Alt" .name) }}
                           </div>
                           <div class="ml-4">
-                            <h3 class="h5 font-primary font-semibold">
+                            <h3 class="h6 font-primary font-bold">
                               {{ .name }}
                             </h3>
-                            <p class="text-text-dark dark:text-white">
+                            <p class="text-sm opacity-70">
                               {{ .designation | markdownify }}
                             </p>
                           </div>

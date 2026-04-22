@@ -1,85 +1,97 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
-  <section class="section-sm">
+
+  <section class="section pt-24 pb-20">
     <div class="container">
       <div class="row">
-        <div class="md:col-10 lg:col-6 mx-auto">
-
-          <!-- Toggle Buttons -->
-          <div class="contact-toggle mb-8">
-            <button
-              id="btn-booking"
-              class="contact-tab-btn active"
-              onclick="showTab('booking')">
-              📅 Book a Consultation
-            </button>
-            <button
-              id="btn-message"
-              class="contact-tab-btn"
-              onclick="showTab('message')">
-              ✉️ Send a Message
-            </button>
-          </div>
-
-          <!-- Calendly Inline Embed (shown first / default) -->
-          <div id="tab-booking">
-            <div
-              class="calendly-inline-widget"
-              data-url="https://calendly.com/sainam-tech11/30min"
-              style="min-width:320px; height:700px;">
+        <div class="md:col-10 lg:col-8 mx-auto">
+          <div class="glass-card !p-8 lg:!p-12">
+            
+            <!-- Toggle Tabs (Glass style) -->
+            <div class="flex justify-center mb-12">
+              <div class="inline-flex p-1 bg-white/20 dark:bg-slate-800/20 backdrop-blur-md rounded-2xl border border-white/20 dark:border-white/10 shadow-inner">
+                <button
+                  id="btn-booking"
+                  class="px-6 py-3 rounded-xl font-bold transition-all duration-300 active:scale-95 bg-primary text-white shadow-lg"
+                  onclick="showTab('booking')">
+                  <i class="fa-regular fa-calendar-check mr-2"></i> Book a Consultation
+                </button>
+                <button
+                  id="btn-message"
+                  class="px-6 py-3 rounded-xl font-bold transition-all duration-300 active:scale-95 text-slate-700 dark:text-slate-300 hover:bg-white/30 dark:hover:bg-slate-700/30"
+                  onclick="showTab('message')">
+                  <i class="fa-regular fa-envelope mr-2"></i> Send a Message
+                </button>
+              </div>
             </div>
-          </div>
 
-          <!-- Contact Form -->
-          <div id="tab-message" style="display:none;">
-            <form action="{{ site.Params.contact_form_action }}" method="POST">
-              <div class="mb-6">
-                <label for="name" class="form-label">
-                  Full Name <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="name"
-                  name="name"
-                  class="form-input"
-                  placeholder="John Doe"
-                  type="text" />
+            <!-- Calendly Inline Embed -->
+            <div id="tab-booking" class="transition-opacity duration-500">
+              <div
+                class="calendly-inline-widget"
+                data-url="https://calendly.com/sainam-tech11/30min"
+                style="min-width:320px; height:700px;">
               </div>
-              <div class="mb-6">
-                <label for="email" class="form-label">
-                  Working Mail <span class="text-red-500">*</span>
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  class="form-input"
-                  placeholder="john.doe@email.com"
-                  type="email" />
-              </div>
-              <div class="mb-6">
-                <label for="message" class="form-label">
-                  Anything else? <span class="text-red-500">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  class="form-input"
-                  placeholder="Message goes here..."
-                  rows="8"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-          </div>
+            </div>
 
+            <!-- Contact Form -->
+            <div id="tab-message" style="display:none;" class="transition-opacity duration-500">
+              <h2 class="text-3xl lg:text-4xl font-black mb-10 text-center bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+                Send us a Message
+              </h2>
+              <form action="{{ site.Params.contact_form_action }}" method="POST">
+                <div class="mb-8">
+                  <label for="name" class="block text-sm font-bold uppercase tracking-wider mb-3 opacity-70">
+                    Full Name <span class="text-primary">*</span>
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    class="w-full bg-white/50 dark:bg-slate-800/50 border border-white/20 dark:border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="John Doe"
+                    type="text" required />
+                </div>
+                <div class="mb-8">
+                  <label for="email" class="block text-sm font-bold uppercase tracking-wider mb-3 opacity-70">
+                    Email Address <span class="text-primary">*</span>
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    class="w-full bg-white/50 dark:bg-slate-800/50 border border-white/20 dark:border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="john.doe@email.com"
+                    type="email" required />
+                </div>
+                <div class="mb-8">
+                  <label for="message" class="block text-sm font-bold uppercase tracking-wider mb-3 opacity-70">
+                    Message <span class="text-primary">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="w-full bg-white/50 dark:bg-slate-800/50 border border-white/20 dark:border-white/10 rounded-2xl px-6 py-4 focus:ring-2 focus:ring-primary outline-none transition-all"
+                    placeholder="Tell us about your project..."
+                    rows="6" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-full py-5 text-base flex justify-center items-center group">
+                  Send Message
+                  <i class="fa fa-paper-plane ml-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </button>
+              </form>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- google map -->
+  <!-- Google Map -->
   {{ with site.Params.google_map }}
     {{ if .enable }}
       <div
         id="map"
+        class="w-full grayscale dark:invert dark:hue-rotate-180 opacity-80"
         style="height: 400px;"
         data-latitude="{{ .map_latitude }}"
         data-longitude="{{ .map_longitude }}"
@@ -88,87 +100,9 @@
     {{ end }}
   {{ end }}
 
-  {{ with site.Params.subscription }}
-    {{ if .enable }}
-      <form
-        action="{{ .mailchimp_form_action | safeURL }}"
-        method="post"
-        id="mc-embedded-subscribe-form"
-        novalidate="novalidate">
-        <div class="input-group w-75 mx-auto mb-3">
-          <input
-            type="email"
-            name="EMAIL"
-            placeholder="Email"
-            class="form-control required email mce_inline_error"
-            id="mce-EMAIL"
-            aria-required="true"
-            autocomplete="off"
-            required />
-          <button
-            class="input-group-text"
-            name="subscribe"
-            id="mc-embedded-subscribe">
-            {{ .button_label }}
-          </button>
-        </div>
-        <input type="hidden" name="EMAILTYPE" id="mce-EMAILTYPE-0" value="html" />
-        <div style="position:absolute;left:-5000px" aria-hidden="true">
-          <input type="text" name="{{ .name }}" tabindex="-1" />
-        </div>
-      </form>
-      <div id="mce-responses" class="clear">
-        <div class="response text-white" id="mce-error-response" style="display:none"></div>
-        <div class="response text-white" id="mce-success-response" style="display:none"></div>
-      </div>
-      <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    {{ end }}
-  {{ end }}
-
-  {{ if site.Params.google_map.enable }}
-    {{ $gmap:= resources.Get "plugins/maps/google-map.js" }}
-    <script defer src="{{ $gmap.RelPermalink }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
-  {{ end }}
-
   <!-- Calendly widget assets -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
-  <style>
-    .contact-toggle {
-      display: flex;
-      gap: 0;
-      background: #f1f1f1;
-      border-radius: 10px;
-      padding: 4px;
-      width: fit-content;
-    }
-
-    .contact-tab-btn {
-      padding: 10px 22px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.95rem;
-      font-weight: 500;
-      background: transparent;
-      color: #555;
-      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    }
-
-    .contact-tab-btn.active {
-      background: #fff;
-      color: #111;
-      font-weight: 700;
-      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
-    }
-
-    .contact-tab-btn:not(.active):hover {
-      color: #111;
-      background: rgba(255,255,255,0.5);
-    }
-  </style>
 
   <script>
     function showTab(tab) {
@@ -180,15 +114,31 @@
       if (tab === 'booking') {
         bookingTab.style.display = 'block';
         messageTab.style.display = 'none';
-        btnBooking.classList.add('active');
-        btnMessage.classList.remove('active');
+        
+        // Update button styles
+        btnBooking.classList.add('bg-primary', 'text-white', 'shadow-lg');
+        btnBooking.classList.remove('text-slate-700', 'dark:text-slate-300', 'hover:bg-white/30', 'dark:hover:bg-slate-700/30');
+        
+        btnMessage.classList.remove('bg-primary', 'text-white', 'shadow-lg');
+        btnMessage.classList.add('text-slate-700', 'dark:text-slate-300', 'hover:bg-white/30', 'dark:hover:bg-slate-700/30');
       } else {
         messageTab.style.display = 'block';
         bookingTab.style.display = 'none';
-        btnMessage.classList.add('active');
-        btnBooking.classList.remove('active');
+        
+        // Update button styles
+        btnMessage.classList.add('bg-primary', 'text-white', 'shadow-lg');
+        btnMessage.classList.remove('text-slate-700', 'dark:text-slate-300', 'hover:bg-white/30', 'dark:hover:bg-slate-700/30');
+        
+        btnBooking.classList.remove('bg-primary', 'text-white', 'shadow-lg');
+        btnBooking.classList.add('text-slate-700', 'dark:text-slate-300', 'hover:bg-white/30', 'dark:hover:bg-slate-700/30');
       }
     }
   </script>
+
+  {{ if site.Params.google_map.enable }}
+    {{ $gmap:= resources.Get "plugins/maps/google-map.js" }}
+    <script defer src="{{ $gmap.RelPermalink }}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ site.Params.google_map.map_api_key }}&libraries=places"></script>
+  {{ end }}
 
 {{ end }}

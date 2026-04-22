@@ -1,15 +1,16 @@
 {{ define "main" }}
 
 <!-- Hero -->
-<section class="py-12 lg:py-20 bg-gray-50 dark:bg-gray-900">
-  <div class="container max-w-4xl">
+<section class="py-20 lg:py-32 relative overflow-hidden">
+  <div class="absolute inset-0 bg-primary/5 -z-10 blur-3xl"></div>
+  <div class="container max-w-4xl text-center">
 
-    <h1 class="text-3xl lg:text-5xl font-bold mb-4">
+    <h1 class="text-4xl lg:text-6xl font-black mb-6 tracking-tight bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
       {{ .Title }}
     </h1>
 
     {{ with .Params.description }}
-    <p class="text-lg text-gray-600 dark:text-gray-400">
+    <p class="text-xl lg:text-2xl text-slate-600 dark:text-slate-400 font-medium">
       {{ . }}
     </p>
     {{ end }}
@@ -18,34 +19,36 @@
 </section>
 
 <!-- Content -->
-<section class="py-12 lg:py-16">
+<section class="pb-20 lg:pb-32">
   <div class="container">
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
       <!-- Main Content -->
-      <article class="lg:col-span-2 prose prose-lg dark:prose-invert max-w-none">
+      <article class="lg:col-span-2 prose prose-lg dark:prose-invert max-w-none glass-card !p-8 lg:!p-12">
         {{ .Content }}
       </article>
 
       <!-- Sticky CTA -->
-      <aside class="lg:sticky lg:top-24 h-fit rounded-xl border border-gray-200 dark:border-gray-800 p-6 bg-white dark:bg-gray-950">
+      <aside class="lg:sticky lg:top-32 h-fit glass-card !p-8">
 
-        <h3 class="text-xl font-semibold mb-3">
+        <h3 class="text-2xl font-bold mb-4">
           Talk to an Expert
         </h3>
 
-        <p class="text-sm text-gray-600 dark:text-gray-400 mb-6">
+        <p class="text-base text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
           Get a clear estimate, timeline, and technical guidance for your project.
         </p>
 
         <a href="/contact"
-           class="block text-center w-full bg-primary text-white py-3 rounded-md font-medium">
-          Get a Free Consultation
+           class="btn btn-primary w-full text-center flex justify-center items-center">
+          Free Consultation
+          <i class="fa fa-arrow-right ml-2"></i>
         </a>
 
-        <div class="mt-6 text-sm text-gray-500 dark:text-gray-400">
-          Serving clients in India, the US & Europe
+        <div class="mt-8 pt-8 border-t border-white/20 dark:border-white/5 text-sm text-slate-500 dark:text-slate-400 flex items-center">
+          <i class="fa fa-globe mr-2"></i>
+          Serving India, US & Europe
         </div>
 
       </aside>
@@ -54,18 +57,4 @@
 
   </div>
 </section>
-
-<!-- Bottom CTA (mobile focused) -->
-<section class="py-12 bg-primary text-white lg:hidden">
-  <div class="container text-center">
-    <h3 class="text-2xl font-semibold mb-4">
-      Ready to start your project?
-    </h3>
-    <a href="/contact"
-       class="inline-block bg-white text-primary px-6 py-3 rounded-md font-medium">
-      Contact Us
-    </a>
-  </div>
-</section>
-
 {{ end }}

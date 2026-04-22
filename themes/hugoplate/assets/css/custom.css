@@ -1,2 +1,63 @@
-/* DO NOT WRITE ANY STYLE IN THIS FILE */
-/* If you want to add your own styles, please write it in the `./assets/css/custom.css` file. */
+/* Glassmorphism & Modern UI Refactor */
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-500;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(59, 130, 246, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Core Glass Utility */
+  .glass {
+    @apply bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/40 dark:border-slate-800/40 shadow-xl;
+  }
+  
+  /* Components using expanded glass properties to avoid Tailwind v4 @apply resolution issues */
+  .glass-card {
+    @apply bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/40 dark:border-slate-800/40 shadow-xl;
+    @apply rounded-[2.5rem] p-8 transition-all duration-500 hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-slate-900/60 hover:shadow-2xl hover:border-primary/30;
+  }
+
+  .glass-nav {
+    @apply bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border-none shadow-xl;
+    @apply rounded-full mt-4 mx-auto max-w-[95%] lg:max-w-[1200px] px-6 py-2 transition-all duration-300;
+  }
+
+  /* Modern Pill Buttons */
+  .btn {
+    @apply rounded-full px-8 py-3 font-bold uppercase tracking-wider text-xs transition-all duration-300 active:scale-95 shadow-lg;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white border-none hover:bg-primary-dark hover:shadow-primary/20 hover:-translate-y-1;
+  }
+
+  .btn-outline-primary {
+    @apply bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border-none text-slate-900 dark:text-white hover:bg-primary hover:text-white hover:shadow-primary/20 hover:-translate-y-1;
+  }
+
+  /* Smooth Section Transitions */
+  .section {
+    @apply py-20 lg:py-32;
+  }
+
+  .section-sm {
+    @apply py-12 lg:py-20;
+  }
+
+  /* Improved Typography */
+  h1, h2, h3, h4 {
+    @apply tracking-tight font-extrabold;
+  }
+}

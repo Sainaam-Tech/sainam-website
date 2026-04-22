@@ -20,7 +20,7 @@ hasCJKLanguage = false
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 
-disableKinds = ["taxonomy", "term", "RSS"]
+disableKinds = ["taxonomy", "term"]
 ########################### Services #############################
 [services]
 
@@ -131,10 +131,6 @@ link = "plugins/swiper/swiper-bundle.css"
 lazy = true
 
 [[params.plugins.css]]
-link = "plugins/glightbox/glightbox.css"
-lazy = true
-
-[[params.plugins.css]]
 link = "plugins/font-awesome/v6/brands.css"
 lazy = true
 
@@ -157,18 +153,6 @@ link = "plugins/swiper/swiper-bundle.js"
 lazy = false
 
 [[params.plugins.js]]
-link = "plugins/glightbox/glightbox.js"
-lazy = true
-
-[[params.plugins.js]]
-link = "js/gallery-slider.js"
-lazy = true
-
-[[params.plugins.js]]
-link = "plugins/cookie.js"
-lazy = false
-
-[[params.plugins.js]]
 link = "js/accordion.js"
 lazy = true
 
@@ -178,8 +162,4 @@ lazy = true
 
 [[params.plugins.js]]
 link = "js/modal.js"
-lazy = true
-
-[[params.plugins.js]]
-link = "plugins/youtube-lite.js"
 lazy = true

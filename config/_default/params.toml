@@ -70,7 +70,7 @@ show_categories = false
 
 ######################## Announcement ########################
 [announcement]
-enable = false
+enable = true
 expire_days = 7
 content = ""
 

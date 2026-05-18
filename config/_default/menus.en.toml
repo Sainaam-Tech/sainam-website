@@ -29,14 +29,31 @@ url = "/services/mvp-development"
 weight = 2
 
 [[main]]
+name = "Products"
+url = "/products"
+weight = 4
+
+[[main]]
+parent = "Products"
+name = "LR Mitra"
+url = "/products#lr-mitra"
+weight = 1
+
+[[main]]
+parent = "Products"
+name = "Pump Mitra"
+url = "/products#pump-mitra"
+weight = 2
+
+[[main]]
 name = "Blog"
 url = "/blog"
-weight = 4
+weight = 5
 
 [[main]]
 name = "Contact"
 url = "/contact"
-weight = 5
+weight = 6
 
 
 # footer menu
@@ -62,7 +79,17 @@ url = "/services/mvp-development"
 weight = 4
 
 [[footer]]
+name = "LR Mitra"
+url = "/products#lr-mitra"
+weight = 5
+
+[[footer]]
+name = "Pump Mitra"
+url = "/products#pump-mitra"
+weight = 6
+
+[[footer]]
 name = "Privacy Policy"
 url = "/privacy-policy"
-weight = 5
+weight = 7
 

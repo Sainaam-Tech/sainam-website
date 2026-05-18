@@ -78,7 +78,7 @@ products:
     - name: "Pump Mitra"
       tagline: "QR-based Loyalty for Fuel Pumps"
       badge: "New — Now Live"
-      description: "Run a digital loyalty program at your petrol pump. Customers scan a QR code on every refuel to earn and redeem rewards — zero hardware needed."
+      description: "Offer-based fuel transactions for petrol pumps. Operator creates offers per vehicle, generates a one-time QR at fueling time — short-lived, single-use, fraud-proof."
       icon: "/images/pump-mitra-icon.svg"
       color: "#0369A1"
       download: false
@@ -86,8 +86,8 @@ products:
       visit_link: "https://pump-mitra.sainam.tech"
       guide_link: "/products#pump-mitra"
       highlights:
-        - "QR-based loyalty — no app install for customers"
-        - "Track refuels and reward points in real time"
-        - "Admin dashboard for pump owners"
+        - "One-time QR per transaction — valid for seconds, single-use only"
+        - "Operator creates offers for specific vehicles"
+        - "Per-vehicle and all-vehicle reports across any time period"
         - "Business plan — full access for your pump"
 ---

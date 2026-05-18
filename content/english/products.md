@@ -116,11 +116,11 @@ Both plans include unlimited lorry receipts — no caps, no extra charges per LR
 
 | Plan | Price | Features |
 |---|---|---|
-| Business | ₹499/month | Unlimited transactions, full dashboard, QR loyalty |
+| Business | ₹499/month | Unlimited transactions, full dashboard, offer management, reports |
 
 ---
 
-Pump Mitra helps petrol pump owners run a simple loyalty program without buying any new hardware. Customers scan a QR code printed at your pump, enter their phone number, and earn points on every refuel. You track everything from a web dashboard.
+Pump Mitra helps petrol pump owners run a secure, offer-based fuel transaction system. The pump operator creates offers for specific vehicles. When a vehicle fuels up under an active offer, the operator generates a one-time QR code on their phone — valid for a very short window and single-use only. The vehicle user scans it to complete the transaction. No static QR codes stuck to walls, no room for fraud.
 
 ---
 
@@ -134,39 +134,39 @@ Pump Mitra helps petrol pump owners run a simple loyalty program without buying 
 
 ---
 
-### Step 2 — Set Up Your QR Code
+### Step 2 — Create an Offer for a Vehicle
 
-1. From your dashboard, go to **My Pump → QR Code**
-2. Download and **print the QR code** — A4 size works well
-3. Place it at the payment counter or fuel nozzle area where customers can easily scan it
-
----
-
-### Step 3 — How Customers Earn Points
-
-1. Customer refuels at your pump
-2. They open their phone camera and **scan your QR code**
-3. They enter their **mobile number** (no app download needed)
-4. Points are credited automatically based on the fuel amount
-5. They can check their balance anytime by scanning again
+1. From your dashboard, go to **Offers → New Offer**
+2. Select or add the **vehicle number** the offer applies to
+3. Set the offer details — fuel amount, discount, or any condition
+4. Save the offer — it is now active for that vehicle
 
 ---
 
-### Step 4 — Record a Transaction (Pump Owner)
+### Step 3 — Generate a One-Time QR When Vehicle Arrives
 
-1. Go to **New Transaction** in your dashboard
-2. Enter the customer's phone number or select from the list
-3. Enter the **fuel amount in litres or rupees**
-4. Tap **Save** — points are credited to the customer
+1. When the vehicle arrives and fuels under the active offer, open the offer on your phone
+2. Tap **Generate QR** — a unique QR code is created on the operator's screen
+3. The QR is **valid for a very short time** and can be **scanned only once**
+4. Show or present the QR to the vehicle user to scan with their phone
+5. Once scanned, the QR expires immediately — cannot be reused or shared
 
 ---
 
-### Step 5 — Manage Rewards & Dashboard
+### Step 4 — Vehicle User Scans the QR
 
-- **Customers** — see all registered customers and their points balance
-- **Transactions** — full history of every refuel recorded
-- **Offers** — create special promotions (e.g. double points on weekends)
-- **Leaderboard** — see your most loyal customers
+1. Vehicle user opens their phone camera and scans the QR shown by the operator
+2. The transaction is recorded instantly — no app download needed for the user
+3. Confirmation appears on both sides
+
+---
+
+### Step 5 — Reports & History
+
+- **Per-vehicle reports** — full transaction history for any specific vehicle across any date range
+- **All-vehicle reports** — overview of all transactions across your pump for any period
+- **Period filters** — daily, weekly, monthly, or custom date range
+- **Offer performance** — see how many times each offer was used and by which vehicles
 
 ---
 

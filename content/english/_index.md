@@ -52,7 +52,7 @@ features:
       - "Startup-friendly approach with clear timelines"
       - "Engineering-first mindset, not template-based work"
       - "Transparent communication and ownership mindset"
-      - "Experience with SaaS, internal tool"
+      - "Experience shipping real products — LR Mitra &amp; Pump Mitra are live"
 
 # Products
 products:
@@ -62,6 +62,7 @@ products:
   items:
     - name: "LR Mitra"
       tagline: "Digital Lorry Receipt Management"
+      badge: "New — Now Live"
       description: "Create, manage, and share lorry receipts on your phone. No paperwork, no delays — built for transporters running daily operations."
       icon: "/images/lr-mitra-icon.svg"
       color: "#0F766E"
@@ -72,10 +73,11 @@ products:
       highlights:
         - "Create LRs in under 30 seconds"
         - "Manage consignors, consignees & parties"
-        - "Monthly subscription plans starting ₹199"
-        - "Works offline, syncs when connected"
+        - "Unlimited LRs on all plans — from ₹199/month"
+        - "Individual & Business plans available"
     - name: "Pump Mitra"
       tagline: "QR-based Loyalty for Fuel Pumps"
+      badge: "New — Now Live"
       description: "Run a digital loyalty program at your petrol pump. Customers scan a QR code on every refuel to earn and redeem rewards — zero hardware needed."
       icon: "/images/pump-mitra-icon.svg"
       color: "#0369A1"
@@ -87,5 +89,5 @@ products:
         - "QR-based loyalty — no app install for customers"
         - "Track refuels and reward points in real time"
         - "Admin dashboard for pump owners"
-        - "Works on any smartphone browser"
+        - "Business plan — full access for your pump"
 ---

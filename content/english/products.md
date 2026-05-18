@@ -1,14 +1,14 @@
 ---
 title: "Our Products — LR Mitra & Pump Mitra"
-meta_title: "LR Mitra & Pump Mitra — Apps Built for Indian Businesses | Sainam Technology"
-description: "Download LR Mitra for digital lorry receipt management, or explore Pump Mitra for fuel pump loyalty programs. Step-by-step guides for both apps."
+meta_title: "LR Mitra & Pump Mitra — Newly Launched Apps for Indian Businesses | Sainam Technology"
+description: "LR Mitra and Pump Mitra are now live. Download LR Mitra for digital lorry receipt management or explore Pump Mitra for fuel pump loyalty. Step-by-step guides included."
 layout: "products"
 draft: false
 ---
 
 <div class="max-w-4xl mx-auto">
 
-## Our Products
+## Our Products — Now Live 🎉
 
 We build practical software for everyday Indian businesses — transporters and fuel pump owners. No unnecessary complexity, no expensive hardware. Just tools that work on your phone.
 
@@ -32,11 +32,12 @@ We build practical software for everyday Indian businesses — transporters and 
 
 ### Plans
 
-| Plan | Price | Features |
-|---|---|---|
-| Individual | ₹199/month | 1 user, unlimited LRs |
-| Business | ₹399/month | Up to 10 users |
-| Pro | ₹999/month | Up to 25 users |
+| Plan | Price | LRs | Users |
+|---|---|---|---|
+| Individual | ₹199/month | Unlimited | 1 user |
+| Business | ₹399/month | Unlimited | Up to 10 users |
+
+Both plans include unlimited lorry receipts — no caps, no extra charges per LR.
 
 ---
 
@@ -90,7 +91,7 @@ We build practical software for everyday Indian businesses — transporters and 
 
 - **History** — view all past LRs with search and filter
 - **Parties** — your saved consignors and consignees auto-fill next time
-- **Team** — add staff members on Business or Pro plans
+- **Team** — add staff members on the Business plan (up to 10 users)
 - **Subscription** — upgrade or manage your plan from the Profile section
 
 ---
@@ -110,6 +111,14 @@ We build practical software for everyday Indian businesses — transporters and 
     </a>
   </div>
 </div>
+
+### Plan
+
+| Plan | Price | Features |
+|---|---|---|
+| Business | ₹499/month | Unlimited transactions, full dashboard, QR loyalty |
+
+---
 
 Pump Mitra helps petrol pump owners run a simple loyalty program without buying any new hardware. Customers scan a QR code printed at your pump, enter their phone number, and earn points on every refuel. You track everything from a web dashboard.
 

@@ -1,0 +1,235 @@
+{{ define "main" }}
+  <!-- Banner -->
+  {{ with .Params.banner }}
+    <section class="section pt-24 pb-12 overflow-hidden relative">
+      <div class="container">
+        <div class="row justify-center items-center">
+          <div class="lg:col-8 md:col-10 mb-12 text-center relative z-10">
+            <h1 class="mb-6 text-h2 lg:text-7xl font-black bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent leading-tight">
+              {{ .title | markdownify }}
+            </h1>
+            <p class="mb-10 text-xl lg:text-2xl opacity-80 max-w-3xl mx-auto font-medium">
+              {{ .content | markdownify }}
+            </p>
+            {{ with .button }}
+              {{ if .enable }}
+                <div class="flex flex-wrap justify-center gap-4">
+                  <a
+                    class="btn btn-primary btn-lg !text-base"
+                    href="{{ .link | absURL }}"
+                    {{ if strings.HasPrefix .link `http` }}
+                      target="_blank" rel="noopener"
+                    {{ end }}>
+                    {{ .label }}
+                    <i class="fa fa-arrow-right pl-2"></i>
+                  </a>
+                </div>
+              {{ end }}
+            {{ end }}
+          </div>
+          <div class="col-12 text-center relative">
+            <div class="absolute inset-0 bg-primary/20 blur-[120px] rounded-full max-w-2xl mx-auto -z-10 h-64 top-1/2 -translate-y-1/2"></div>
+            {{ partial "image" (dict "Src" .image "Alt" (.image_alt | default "Banner image") "Loading" "eager" "Class" "mx-auto lg:!max-w-[900px] rounded-3xl shadow-[0_0_50px_rgba(0,0,0,0.1)] dark:shadow-[0_0_50px_rgba(0,0,0,0.3)]" "DisplayXL" "900x" ) }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Banner -->
+
+  <!-- Features -->
+  {{ range $i, $e:= .Params.features }}
+    <section class="section-sm">
+      <div class="container">
+        <div class="glass-card row items-center justify-between">
+          <div
+            class="mb:md-0 {{ if not (modBool $i 2) }}
+              md:order-2
+            {{ end }} md:col-5 mb-6">
+            {{ partial "image" (dict "Src" .image "Alt" (.image_alt | default "feature image") "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x" "Class" "rounded-2xl shadow-lg") }}
+          </div>
+          <div
+            class="{{ if not (modBool $i 2) }}
+              md:order-1
+            {{ end }} md:col-7 lg:col-6">
+            <h2 class="mb-4">
+              {{ .title | markdownify }}
+            </h2>
+            <p class="mb-8 text-lg opacity-80">
+              {{ .content | markdownify }}
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {{ range .bulletpoints }}
+                <li class="relative mb-4 pl-6 text-sm">
+                  <i class="fa fa-check absolute left-0 top-1 text-primary"></i>
+                  {{ . | markdownify }}
+                </li>
+              {{ end }}
+            </ul>
+            {{ with .button }}
+              {{ if .enable }}
+                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                  {{ .label }}
+                  <i class="fa fa-arrow-right pl-2"></i>
+                </a>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Features -->
+
+  <!-- Products -->
+  {{ with .Params.products }}
+    {{ if .enable }}
+      <section class="section bg-gradient-to-b from-transparent to-slate-50/50 dark:to-slate-900/30">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-12">
+              <h2 class="mb-4">{{ .title | markdownify }}</h2>
+              <p class="text-lg opacity-70 max-w-2xl mx-auto">{{ .subtitle | markdownify }}</p>
+            </div>
+          </div>
+          <div class="row justify-center gap-y-8">
+            {{ range .items }}
+              <div class="md:col-6 lg:col-5">
+                <div class="glass-card h-full flex flex-col p-8 rounded-3xl">
+                  <!-- Icon + name -->
+                  <div class="flex items-center gap-4 mb-6">
+                    <div class="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden flex-shrink-0" style="background: {{ .color }}18;">
+                      <img src="{{ .icon }}" alt="{{ .name }} icon" class="w-10 h-10 object-contain" />
+                    </div>
+                    <div>
+                      <h3 class="text-xl font-bold mb-0.5">{{ .name }}</h3>
+                      <p class="text-sm opacity-60">{{ .tagline }}</p>
+                    </div>
+                  </div>
+
+                  <!-- Description -->
+                  <p class="text-base opacity-75 mb-6 leading-relaxed">{{ .description }}</p>
+
+                  <!-- Highlights -->
+                  <ul class="space-y-2 mb-8 flex-1">
+                    {{ range .highlights }}
+                      <li class="flex items-start gap-2 text-sm">
+                        <svg class="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>{{ . }}</span>
+                      </li>
+                    {{ end }}
+                  </ul>
+
+                  <!-- Buttons -->
+                  <div class="flex flex-wrap gap-3 mt-auto">
+                    {{ if .download }}
+                      <a href="{{ .download_link }}"
+                         download
+                         class="btn btn-primary flex-1 justify-center text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        {{ .download_label }}
+                      </a>
+                    {{ else }}
+                      <a href="{{ .visit_link }}"
+                         target="_blank" rel="noopener"
+                         class="btn btn-primary flex-1 justify-center text-sm">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        {{ .visit_label }}
+                      </a>
+                    {{ end }}
+                    <a href="{{ .guide_link | absURL }}" class="btn btn-outline-primary text-sm px-4">
+                      How it works
+                      <i class="fa fa-arrow-right pl-1"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+
+          <!-- Android install note -->
+          <div class="row justify-center mt-8">
+            <div class="lg:col-10 text-center">
+              <p class="text-sm opacity-50">
+                <svg class="w-4 h-4 inline mr-1 -mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.523 15.341a.5.5 0 01-.347-.139L12 10.485l-5.176 4.717a.5.5 0 01-.694-.72l5.523-5.032a.5.5 0 01.694 0l5.523 5.032a.5.5 0 01-.347.859z"/></svg>
+                LR Mitra is an Android app. After downloading, allow installation from unknown sources when prompted.
+                <a href="/products#install-guide" class="underline opacity-70 hover:opacity-100">See install steps →</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- /Products -->
+
+  <!-- Testimonials -->
+  {{ with site.GetPage "sections/testimonial" }}
+    {{ if .Params.enable }}
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
+              <h2 class="mb-4">
+                {{ .Title | markdownify }}
+              </h2>
+              <p>
+                {{ .Params.description | markdownify }}
+              </p>
+            </div>
+            <div class="col-12">
+              <div class="swiper testimonial-slider">
+                <div class="swiper-wrapper">
+                  {{ range .Params.testimonials }}
+                    <div class="swiper-slide">
+                      <div
+                        class="glass-card rounded-[2rem] px-8 py-10 h-full">
+                        <div class="text-primary">
+                          <svg
+                            width="33"
+                            height="20"
+                            viewBox="0 0 33 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z"
+                              fill="currentColor" />
+                          </svg>
+                        </div>
+                        <blockquote class="mt-8 text-lg font-medium leading-relaxed">
+                          "{{ .content | markdownify }}"
+                        </blockquote>
+                        <div class="mt-auto pt-8 flex items-center">
+                          <div class="text-text-dark dark:text-white">
+                            {{ partial "image" (dict "Src" .avatar "Size" "60x60" "Class" "rounded-full ring-4 ring-white/20 shadow-xl" "Alt" .name) }}
+                          </div>
+                          <div class="ml-4">
+                            <h3 class="h6 font-primary font-bold">
+                              {{ .name }}
+                            </h3>
+                            <p class="text-sm opacity-70">
+                              {{ .designation | markdownify }}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {{ end }}
+                </div>
+                <div
+                  class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {{ end }}
+  {{ end }}
+  <!-- /Testimonials -->
+{{ end }}

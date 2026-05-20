@@ -23,7 +23,7 @@ We build practical software for everyday Indian businesses — transporters and 
   <div>
     <p class="font-semibold text-lg mb-1">LR Mitra — Android App</p>
     <p class="text-sm opacity-70 mb-3">Create and manage lorry receipts digitally. Works for individual transporters and transport companies.</p>
-    <a href="/downloads/lr-mitra-v1.3.apk" download class="inline-flex items-center gap-2 bg-teal-700 text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-teal-800 transition-colors">
+    <a href="/downloads/lr-mitra-v1.4.apk" download class="inline-flex items-center gap-2 bg-teal-700 text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-teal-800 transition-colors">
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
       Download APK (Android)
     </a>

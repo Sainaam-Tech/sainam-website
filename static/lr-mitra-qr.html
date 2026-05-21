@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>LR Mitra — Scan to Download</title>
+  <link rel="icon" type="image/svg+xml" href="/images/lr-mitra-icon.svg" />
+  <style>
+    :root {
+      --teal: #0F766E;
+      --teal-dark: #0d3d6e;
+      --teal-soft: #ECFDF5;
+      --ink: #0F172A;
+      --muted: #64748B;
+      --border: #E2E8F0;
+      --bg: #F8FAFC;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif; }
+    main { max-width: 480px; margin: 0 auto; padding: 48px 24px 32px; text-align: center; }
+    .icon { width: 84px; height: 84px; border-radius: 20px; }
+    h1 { font-size: 24px; margin: 16px 0 4px; color: var(--ink); }
+    .tagline { font-size: 14px; color: var(--muted); margin: 0 0 28px; }
+    .qr-card {
+      background: #fff; border: 1px solid var(--border); border-radius: 20px;
+      padding: 24px; margin: 0 auto 24px; display: inline-block;
+    }
+    #qr { width: 280px; height: 280px; display: block; }
+    .qr-note { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
+    .url-row {
+      display: flex; align-items: center; gap: 8px; justify-content: center;
+      background: #fff; border: 1px solid var(--border); border-radius: 10px;
+      padding: 10px 14px; margin: 0 0 16px; font-family: ui-monospace, Menlo, Consolas, monospace;
+      font-size: 13px; color: var(--teal); word-break: break-all;
+    }
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center;
+      padding: 14px 18px; border-radius: 12px; font-size: 15px; font-weight: 600;
+      text-decoration: none; border: 0; cursor: pointer;
+    }
+    .btn-primary { background: var(--teal); color: #fff; }
+    .btn-primary:hover { background: #0c5e58; }
+    .btn-secondary { background: #fff; color: var(--teal); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--teal-soft); }
+    .hint { font-size: 12px; color: var(--muted); margin: 20px 0 0; line-height: 1.5; }
+    footer { margin-top: 32px; font-size: 11px; color: var(--muted); }
+    footer a { color: var(--muted); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <main>
+    <img class="icon" src="/images/lr-mitra-icon.svg" alt="LR Mitra" />
+    <h1>LR Mitra</h1>
+    <p class="tagline">Scan the QR with another phone to install the Android app.</p>
+
+    <div class="qr-card">
+      <canvas id="qr" width="280" height="280" aria-label="QR code to download LR Mitra"></canvas>
+      <p class="qr-note">Open your phone camera and point at this QR</p>
+    </div>
+
+    <div class="url-row" id="url-row"></div>
+
+    <div class="actions">
+      <a id="download-btn" class="btn btn-primary" href="#" download>Download APK</a>
+      <button id="copy-btn" class="btn btn-secondary" type="button">Copy link</button>
+    </div>
+
+    <p class="hint">
+      Android only. After downloading, open the APK from your notifications or
+      Downloads folder and allow installs from this source if prompted.
+    </p>
+
+    <footer>
+      <a href="/">Sainam Technology</a>
+    </footer>
+  </main>
+
+  <!-- Pinned QR library, ~17 KB minified -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script>
+    // Single line to edit on a version bump. Keep this in sync with the
+    // download link on the home page (content/english/_index.md) and the
+    // announcement banner (layouts/partials/announcement.html).
+    var DOWNLOAD_URL = "https://sainam.tech/downloads/lr-mitra-v1.5.apk";
+
+    document.getElementById("download-btn").href = DOWNLOAD_URL;
+    document.getElementById("url-row").textContent = DOWNLOAD_URL;
+
+    if (window.QRCode) {
+      QRCode.toCanvas(
+        document.getElementById("qr"),
+        DOWNLOAD_URL,
+        { width: 280, margin: 1, color: { dark: "#0d3d6e", light: "#ffffff" } }
+      );
+    }
+
+    document.getElementById("copy-btn").addEventListener("click", function () {
+      navigator.clipboard.writeText(DOWNLOAD_URL).then(function () {
+        var btn = document.getElementById("copy-btn");
+        var prev = btn.textContent;
+        btn.textContent = "Copied!";
+        setTimeout(function () { btn.textContent = prev; }, 1500);
+      });
+    });
+  </script>
+</body>
+</html>

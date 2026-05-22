@@ -68,7 +68,7 @@ products:
       color: "#0F766E"
       download: true
       download_label: "Download for Android"
-      download_link: "/downloads/lr-mitra-v1.5.apk"
+      download_link: "/downloads/lr-mitra-v1.6.apk"
       guide_link: "/products#lr-mitra"
       highlights:
         - "Create LRs in under 30 seconds"

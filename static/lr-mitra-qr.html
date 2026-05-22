@@ -78,8 +78,9 @@
     </footer>
   </main>
 
-  <!-- Pinned QR library, ~17 KB minified -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <!-- Pinned QR library, ~17 KB minified. Stay on 1.5.1 - 1.5.3+ dropped the
+       build/ directory from the npm tarball so jsdelivr/unpkg return 404 for it. -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
   <script>
     // Stable filename - the latest release is always served at this URL, so
     // the encoded QR never goes stale. The release script copies the new APK

@@ -74,7 +74,7 @@ products:
         - "Create LRs in under 30 seconds"
         - "Manage consignors, consignees & parties"
         - "Unlimited LRs on all plans — from ₹199/month"
-        - "Individual & Business plans available"
+        - "Individual, Business & Custom plans available"
     - name: "Pump Mitra"
       tagline: "QR-based Loyalty for Fuel Pumps"
       badge: "New — Now Live"

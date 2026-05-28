@@ -36,8 +36,38 @@ We build practical software for everyday Indian businesses — transporters and 
 |---|---|---|---|
 | Individual | ₹199/month | Unlimited | 1 user |
 | Business | ₹399/month | Unlimited | Up to 10 users |
+| Custom | Contact for pricing | Unlimited | Custom user & branch limits |
 
-Both plans include unlimited lorry receipts — no caps, no extra charges per LR.
+All paid plans include unlimited lorry receipts — no caps, no extra charges per LR.
+
+<div class="my-6 p-6 rounded-2xl bg-teal-50 dark:bg-teal-900/20 border border-teal-100 dark:border-teal-800">
+  <p class="font-semibold text-lg mb-1">Custom Plan — for large fleets and enterprises</p>
+  <p class="text-sm opacity-80 mb-3">Everything in Business, plus custom user & branch limits, custom integrations and reporting, and a dedicated account manager.</p>
+  <button type="button"
+    onclick="var f=document.getElementById('lr-mitra-custom-form');f.classList.remove('hidden');this.style.display='none';"
+    class="inline-flex items-center gap-2 bg-teal-700 text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-teal-800 transition-colors">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+    Contact us for pricing
+  </button>
+  <form id="lr-mitra-custom-form" class="hidden mt-4 space-y-3"
+        action="https://formspree.io/f/xeejoadk" method="POST">
+    <input type="hidden" name="_subject" value="LR Mitra Custom Plan Enquiry" />
+    <input type="hidden" name="product" value="LR Mitra — Custom Plan" />
+    <input type="text" name="name" placeholder="Your name" required
+      class="w-full bg-white/70 dark:bg-slate-800/70 border border-teal-200 dark:border-teal-800 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-teal-400" />
+    <input type="email" name="email" placeholder="Your email" required
+      class="w-full bg-white/70 dark:bg-slate-800/70 border border-teal-200 dark:border-teal-800 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-teal-400" />
+    <input type="tel" name="phone" placeholder="Phone (optional)"
+      class="w-full bg-white/70 dark:bg-slate-800/70 border border-teal-200 dark:border-teal-800 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-teal-400" />
+    <textarea name="message" rows="3" required
+      class="w-full bg-white/70 dark:bg-slate-800/70 border border-teal-200 dark:border-teal-800 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-teal-400">I'm interested in the LR Mitra Custom plan. Please share details.</textarea>
+    <button type="submit"
+      class="inline-flex items-center gap-2 bg-teal-700 text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:bg-teal-800 transition-colors">
+      Send enquiry
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+    </button>
+  </form>
+</div>
 
 ---
 

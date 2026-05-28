@@ -1,0 +1,11 @@
+{{/*
+  Override of the gethugothemes announcement module's announcement-script.html.
+
+  The upstream script uses Cookies.get/set (js-cookie) to remember a dismiss
+  click on #announcement-button, but this project (a) doesn't load js-cookie
+  and (b) ships a custom announcement banner with no dismiss button — see
+  layouts/partials/announcement.html. The upstream script therefore throws
+  "ReferenceError: Cookies is not defined" on every page load.
+
+  No replacement script is needed: the banner is always-on by design.
+*/}}
